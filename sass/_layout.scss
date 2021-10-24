@@ -1,0 +1,105 @@
+.container {
+  max-width: 120rem;
+  margin: 8rem auto; // Centers in the viewport: Centers the container inside the parent element: "body" in this case
+  background-color: var(--color-grey-light-1);
+  box-shadow: var(--shadow-dark);
+
+  min-height: 50rem; // Dev Purposes
+
+  // Start Media Queries From Here
+
+  @media only screen and (max-width: $bp-largest) {
+    margin: 0;
+    max-width: 100%;
+    width: 100%;
+  }
+}
+
+.header {
+  font-size: 1.4rem;
+  height: 7rem;
+  background-color: var(--color-white);
+  border-bottom: var(--line);
+
+  display: flex; // 1st Level Flex container
+  justify-content: space-between; // Main-Axis: Horizontal alignment
+  align-items: center; // Cross-Axis: Vertical alignment
+
+  @media only screen and (max-width: $bp-smallest) {
+    flex-wrap: wrap; // sets the serch bar to a new line/ next row
+    height: 11rem;
+    align-content: space-around;
+  }
+}
+
+.content {
+  display: flex;
+
+  @media only screen and (max-width: $bp-medium) {
+    flex-direction: column;
+  }
+}
+
+.sidebar {
+  background-color: var(--color-grey-dark-1);
+
+  flex: 0 0 18%; // To define width in flexbox: flex-grow: 0, flex-shrink:0, flex-basis: 18%;
+
+  display: flex;
+  flex-direction: column; // Changing the flex direction to column ❗ Remember
+  justify-content: space-between;
+}
+
+.hotel-view {
+  background-color: var(--color-white);
+  // background-color: #999;
+  // color: var(--color-white);
+
+  // Dev Purposes
+  // height: 80rem;
+
+  flex: 1; // Element should grow as much as it can, over all the available space
+}
+
+.detail {
+  font-size: 1.4rem;
+  display: flex;
+  padding: 4.5rem;
+  background-color: var(--color-grey-light-1);
+  border-bottom: var(--line);
+
+  @media only screen and (max-width: $bp-medium) {
+    padding: 3rem;
+  }
+
+  @media only screen and (max-width: $bp-small) {
+    flex-direction: column;
+  }
+}
+
+.description {
+  background-color: var(--color-white);
+  box-shadow: var(--shadow-light);
+  flex: 0 0 60%;
+  margin-right: 4.5rem;
+  padding: 3rem;
+
+  @media only screen and (max-width: $bp-medium) {
+    padding: 2rem;
+    margin-right: 3rem;
+  }
+
+  @media only screen and (max-width: $bp-small) {
+    margin-right: 0;
+    margin-bottom: 3rem;
+  }
+}
+
+.user-reviews {
+  // background-color: green;
+  flex: 1;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
